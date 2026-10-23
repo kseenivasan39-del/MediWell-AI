@@ -31,17 +31,26 @@ MediWell AI follows a decoupled, resilient full-stack architecture:
 ### 1. Backend Setup & Run
 
 Open a terminal:
-```powershell
-cd d:\Programs\mediwell-ai\backend
+```bash
+git clone https://github.com/kseenivasan39-del/MediWell-AI.git
+cd MediWell-AI/backend
 
-# Activate virtual environment
+# 1. Create and activate a Python virtual environment
+python -m venv .venv
+# On Windows PowerShell:
 .\.venv\Scripts\Activate.ps1
+# On macOS / Linux:
+# source .venv/bin/activate
 
-# (Optional) Run schema migrations & synthetic database seed
-python -m app.db.migrate
-python -m app.seed
+# 2. Install dependencies
+pip install -r requirements.txt
 
-# Start the FastAPI server
+# 3. Configure environment variables
+# Copy example configuration:
+cp .env.example .env
+# Optional: Add your GEMINI_API_KEY, GOOGLE_CLIENT_ID, and GOOGLE_CLIENT_SECRET to .env
+
+# 4. Start the FastAPI server (Automatically creates and seeds database on startup!)
 uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 ```
 - Interactive Swagger UI: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
@@ -50,13 +59,13 @@ uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 ### 2. Frontend Setup & Run
 
 In a second terminal:
-```powershell
-cd d:\Programs\mediwell-ai\frontend
+```bash
+cd MediWell-AI/frontend
 
-# Install dependencies (if not already installed)
+# 1. Install dependencies
 npm install
 
-# Start development server (or 'npm run build' && 'npx next start -p 3000')
+# 2. Start Next.js development server
 npm run dev
 ```
 - Open application: [http://localhost:3000](http://localhost:3000)
