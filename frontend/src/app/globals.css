@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ==========================================================================
+   Accessibility Tooling Overrides
+   ========================================================================== */
+
+/* 1. High Contrast Mode */
+html.a11y-high-contrast {
+  filter: contrast(150%) !important;
+}
+
+html.a11y-high-contrast body {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+html.a11y-high-contrast div,
+html.a11y-high-contrast aside,
+html.a11y-high-contrast header,
+html.a11y-high-contrast main,
+html.a11y-high-contrast section,
+html.a11y-high-contrast article {
+  border-color: #ffffff !important;
+}
+
+/* 2. Invert Mode */
+html.a11y-invert {
+  filter: invert(100%) hue-rotate(180deg) !important;
+}
+
+html.a11y-invert img,
+html.a11y-invert video,
+html.a11y-invert svg {
+  filter: invert(100%) hue-rotate(180deg) !important;
+}
+
+/* 3. Desaturate / Monochromatic */
+html.a11y-desaturate {
+  filter: grayscale(100%) !important;
+}
+
+/* 4. Highlight Links */
+html.a11y-highlight-links a {
+  background-color: #fef08a !important;
+  color: #854d0e !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+  font-weight: 700 !important;
+  padding: 0 2px !important;
+  border-radius: 2px !important;
+}
+
+/* 5. Text Size Increases / Decreases */
+html.a11y-font-increase {
+  font-size: 118% !important;
+}
+
+html.a11y-font-decrease {
+  font-size: 88% !important;
+}
+
+/* 6. Text Spacing */
+html.a11y-text-spacing * {
+  letter-spacing: 0.12em !important;
+  word-spacing: 0.16em !important;
+}
+
+/* 7. Line Height */
+html.a11y-line-height * {
+  line-height: 2 !important;
+}
+
+/* 8. Big Cursor */
+html.a11y-big-cursor,
+html.a11y-big-cursor * {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24' fill='%23000000' stroke='%23ffffff' stroke-width='1.5'%3E%3Cpath d='M3 3l7 18 3-7 7-3L3 3z'/%3E%3C/svg%3E"), auto !important;
+}
+
+/* 9. Hide Images */
+html.a11y-hide-images img,
+html.a11y-hide-images svg:not(.a11y-keep-icon) {
+  opacity: 0.05 !important;
+  filter: blur(8px) !important;
+}

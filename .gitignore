@@ -1,0 +1,49 @@
+# Operating System Files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Environment Variables & Secrets
+.env
+.env*.local
+*.env
+
+# Python / Backend
+backend/.venv/
+.venv/
+venv/
+ENV/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.sqlite
+*.sqlite3
+*.db
+mediwell.db
+
+# Node / Frontend
+frontend/node_modules/
+node_modules/
+frontend/.next/
+.next/
+frontend/out/
+out/
+frontend/build/
+build/
+.npm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Testing & Coverage
+coverage/
+.nyc_output/
+.pytest_cache/
+
+# IDE & Tooling
+.idea/
+.vscode/
+*.swp
+*.swo
